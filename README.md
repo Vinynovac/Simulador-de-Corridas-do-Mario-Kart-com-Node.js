@@ -1,109 +1,52 @@
-# Entrega de projeto - Simulador de Corridas do Mario Kart com Node.js | DIO
+🏁 Simulador de Corridas do Mario Kart com Node.js | DIO
 
-Neste projeto, foi desenvolvida uma corrida que considera as habilidades dos personagens e as variáveis das pistas. O desenvolvimento foi realizado utilizando NodeJS.
+Neste projeto foi desenvolvido um simulador de corrida inspirado no Mario Kart, onde as habilidades dos personagens e as variáveis das pistas são consideradas para determinar o vencedor. O desenvolvimento foi realizado em Node.js, garantindo leveza e escalabilidade.
 
-<table>
-        <tr>
-            <td>
-                <img src="./docs/header.gif" alt="Mario Kart" width="200">
-            </td>
-            <td>
-                <b>Objetivo:</b>
-                <p>Mario Kart é uma série de jogos de corrida desenvolvida e publicada pela Nintendo. Nosso desafio será criar uma lógica de um jogo de vídeo game para simular corridas de Mario Kart, levando em consideração as regras e mecânicas abaixo.</p>
-            </td>
-        </tr>
-    </table>
+<table> <tr> <td> <img src="./docs/header.gif" alt="Mario Kart" width="200"> </td> <td> <b>Objetivo:</b> <p>Mario Kart é uma famosa série de jogos de corrida desenvolvida e publicada pela Nintendo. O desafio aqui é criar a lógica de um jogo para simular corridas de Mario Kart, aplicando regras e mecânicas semelhantes às originais.</p> </td> </tr> </table>
+🎮 Personagens Disponíveis
+<table style="border-collapse: collapse; width: 800px; margin: 0 auto;"> <tr> <td style="border: 1px solid black; text-align: center;"> <p><b>Mario</b></p> <img src="./docs/mario.gif" width="60" height="60"> </td> <td style="border: 1px solid black; text-align: center;"> <p>Velocidade: 4</p> <p>Manobrabilidade: 3</p> <p>Poder: 3</p> </td> <td style="border: 1px solid black; text-align: center;"> <p><b>Peach</b></p> <img src="./docs/peach.gif" width="60" height="60"> </td> <td style="border: 1px solid black; text-align: center;"> <p>Velocidade: 3</p> <p>Manobrabilidade: 4</p> <p>Poder: 2</p> </td> <td style="border: 1px solid black; text-align: center;"> <p><b>Yoshi</b></p> <img src="./docs/yoshi.gif" width="60" height="60"> </td> <td style="border: 1px solid black; text-align: center;"> <p>Velocidade: 2</p> <p>Manobrabilidade: 4</p> <p>Poder: 3</p> </td> </tr> <tr> <td style="border: 1px solid black; text-align: center;"> <p><b>Bowser</b></p> <img src="./docs/bowser.gif" width="60" height="60"> </td> <td style="border: 1px solid black; text-align: center;"> <p>Velocidade: 5</p> <p>Manobrabilidade: 2</p> <p>Poder: 5</p> </td> <td style="border: 1px solid black; text-align: center;"> <p><b>Luigi</b></p> <img src="./docs/luigi.gif" width="60" height="60"> </td> <td style="border: 1px solid black; text-align: center;"> <p>Velocidade: 3</p> <p>Manobrabilidade: 4</p> <p>Poder: 4</p> </td> <td style="border: 1px solid black; text-align: center;"> <p><b>Donkey Kong</b></p> <img src="./docs/dk.gif" width="60" height="60"> </td> <td style="border: 1px solid black; text-align: center;"> <p>Velocidade: 2</p> <p>Manobrabilidade: 2</p> <p>Poder: 5</p> </td> </tr> </table>
+🕹️ Regras e Mecânicas
 
-<h2>Players</h2>
-      <table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
-        <tr>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Mario</p>
-                <img src="./docs/mario.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 4</p>
-                <p>Manobrabilidade: 3</p>
-                <p>Poder: 3</p>
-            </td>
-             <td style="border: 1px solid black; text-align: center;">
-                <p>Peach</p>
-                <img src="./docs/peach.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 3</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 2</p>
-            </td>
-              <td style="border: 1px solid black; text-align: center;">
-                <p>Yoshi</p>
-                <img src="./docs/yoshi.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 2</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 3</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Bowser</p>
-                <img src="./docs/bowser.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 5</p>
-                <p>Manobrabilidade: 2</p>
-                <p>Poder: 5</p>
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Luigi</p>
-                <img src="./docs/luigi.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 3</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 4</p>
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Donkey Kong</p>
-                <img src="./docs/dk.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 2</p>
-                <p>Manobrabilidade: 2</p>
-                <p>Poder: 5</p>
-            </td>
-        </tr>
-    </table>
+Jogadores:
 
-<p></p>
+O programa recebe dois personagens como objetos para disputar a corrida.
 
-<h3>🕹️ Regras & mecânicas:</h3>
+Pistas:
 
-<b>Jogadores:</b>
+As corridas ocorrem em uma pista aleatória com 5 rodadas.
 
-<label for="jogadores-item">O Computador deve receber dois personagens para disputar a corrida em um objeto cada</label>
+A cada rodada, sorteia-se um bloco de pista: reta, curva ou confronto.
 
-<b>Pistas:</b>
+Reta: rola-se um dado de 6 lados e soma-se o atributo Velocidade. O maior resultado ganha 1 ponto.
 
-<ul>
-  <li> <label for="pistas-1-item">Os personagens irão correr em uma pista aleatória de 5 rodadas</label></li>
-  <li> <label for="pistas-2-item">A cada rodada, será sorteado um bloco da pista que pode ser uma reta, curva ou confronto</label>
-    <ul>
-      <li><label for="pistas-2-1-item">Caso o bloco da pista seja uma RETA, o jogador deve jogar um dado de 6 lados e somar o atributo VELOCIDADE, quem vencer ganha um ponto</label></li>
-      <li><label for="pistas-2-2-item">Caso o bloco da pista seja uma CURVA, o jogador deve jogar um dado de 6 lados e somar o atributo MANOBRABILIDADE, quem vencer ganha um ponto</label></li>
-      <li><label for="pistas-2-3-item">Caso o bloco da pista seja um CONFRONTO, o jogador deve jogar um dado de 6 lados e somar o atributo PODER, quem perder, perde um ponto</label></li>
-      <li><label for="pistas-2-3-item">Nenhum jogador pode ter pontuação negativa (valores abaixo de 0)</label></li>
-    </ul>
-  </li>
-</ul>
+Curva: rola-se um dado de 6 lados e soma-se o atributo Manobrabilidade. O maior resultado ganha 1 ponto.
 
-<b>Condição de vitória:</b>
+Confronto: rola-se um dado de 6 lados e soma-se o atributo Poder. O perdedor perde 1 ponto.
 
-<label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
+A pontuação mínima é 0 (não há valores negativos).
 
-## Tecnologias Utilizadas
+Condição de Vitória:
 
-- JavaScript.
-- NodeJs.
+Ao final das 5 rodadas, vence o jogador com mais pontos.
 
+⚙️ Tecnologias Utilizadas
+
+JavaScript
+
+Node.js
+
+🚀 Como Executar o Projeto
+
+Clone o repositório:
+
+git clone https://github.com/Vinynovac/Simulador-de-Corridas-do-Mario-Kart-com-Node.js
+
+
+Acesse o diretório do projeto:
+
+cd Simulador-de-Corridas-do-Mario-Kart-com-Node.js
+
+
+Execute o simulador:
+
+node src/index.js
